@@ -20,6 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app"></div>
+    <!-- divの中身を削除 -->
+    <div id="app">
+    </div>
 </body>
 </html>
