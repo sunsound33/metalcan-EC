@@ -10,7 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "@babel/preset-react": "^7.0.0",
+        "@babel/preset-react": "^7.13.13",
         "axios": "^0.21.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
@@ -19,13 +19,16 @@
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "react": "^16.2.0",
-        "react-dom": "^16.2.0",
-        "resolve-url-loader": "^3.1.0",
-        "sass": "^1.32.8",
-        "sass-loader": "^7.1.0"
+        "react-dom": "^16.14.0",
+        "resolve-url-loader": "^2.3.1",
+        "sass": "^1.20.1",
+        "sass-loader": "^8.0.0"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.3",
-        "react-router-dom": "^5.2.0"
-    }
+        "material": "^0.4.3",
+        "react-router-dom": "^5.2.0",
+        "ui": "^0.2.4"
+    },
+    "name": "backend"
 }

@@ -1,27 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Route, Switch, } from 'react-router-dom';
 
-import NavBar from './NavBar'
-import About from './About'
-import User from './User'
-import Top from './Top'
+import Store from './page/store/Store.js';
+import Home from './page/store/Home.js';
+import User from './page/user/User.js';
+import Auth from './page/auth/Auth.js';
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/Store' component={Store} />
+        <Route path='/User' component={User} />
+        <Route path='/Auth' component={Auth} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 
-function App() {
-    return (
-    <Router>
-        <div>
-            <NavBar />
-            <Switch>
-                <Route path="/" exact component={Top} />
-                <Route path="/about" component={About} />
-                <Route path="/user" component={User} />
-            </Switch>
-        </div>
-    </Router>
-    )
-}
 
 if (document.getElementById('app')) {
     ReactDOM.render(<App />, document.getElementById('app'));
