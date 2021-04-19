@@ -6,17 +6,14 @@ import Store from './page/store/Store.js';
 import Home from './page/store/Home.js';
 import User from './page/user/User.js';
 import Auth from './page/auth/Auth.js';
-
-const App = () => {
+import NavBar from './NavBar';
+function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/Store' component={Store} />
-        <Route path='/User' component={User} />
-        <Route path='/Auth' component={Auth} />
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <Home />
+    </div>
+        
+        
   );
 };
 
