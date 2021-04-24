@@ -26,14 +26,14 @@ import CloseIcon from '@material-ui/icons/Close';
 
 
 
-import * as React from 'react';
+import * as React    from 'react';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import Collapse from '@material-ui/core/Collapse';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
+import Collapse      from '@material-ui/core/Collapse';
+import DraftsIcon    from '@material-ui/icons/Drafts';
+import SendIcon      from '@material-ui/icons/Send';
+import ExpandLess    from '@material-ui/icons/ExpandLess';
+import ExpandMore    from '@material-ui/icons/ExpandMore';
+import StarBorder    from '@material-ui/icons/StarBorder';
 
 const drawerWidth = 240;
 
