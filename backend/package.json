@@ -31,8 +31,10 @@
     "dependencies": {
         "@material-ui/core": "^4.11.3",
         "@material-ui/icons": "^4.11.2",
+        "@react-spring/parallax": "^9.1.2",
         "material": "^0.4.3",
         "react-router-dom": "^5.2.0",
+        "react-spring": "^9.1.2",
         "ui": "^0.2.4"
     },
     "name": "backend"

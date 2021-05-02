@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './page/store/Home.js';
-
+import Home from './page/store/Home';
 
 function App() {
   return (
     <div>
-      <Home />
+      <Home/>
+
     </div>
         
         
