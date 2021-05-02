@@ -4,10 +4,10 @@ import Home from './page/store/Home';
 
 function App() {
   return (
-    <div>
+    <>
       <Home/>
 
-    </div>
+    </>
         
         
   );
