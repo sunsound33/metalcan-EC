@@ -17113,10 +17113,352 @@ if (document.getElementById('app')) {
 
 /***/ }),
 
-/***/ "./resources/ts/components/page/store/Fadein.tsx":
+/***/ "./resources/ts/components/page/store/Home.tsx":
+/*!*****************************************************!*\
+  !*** ./resources/ts/components/page/store/Home.tsx ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var NavBar_1 = __importDefault(__webpack_require__(/*! ./NavBar */ "./resources/ts/components/page/store/NavBar.tsx"));
+
+var Home = function Home() {
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(NavBar_1["default"], null));
+};
+
+exports.default = Home;
+
+/***/ }),
+
+/***/ "./resources/ts/components/page/store/MenuList.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/ts/components/page/store/MenuList.tsx ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var styles_1 = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+
+var ListSubheader_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListSubheader */ "./node_modules/@material-ui/core/esm/ListSubheader/index.js"));
+
+var List_1 = __importDefault(__webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/esm/List/index.js"));
+
+var ListItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js"));
+
+var ListItemIcon_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/esm/ListItemIcon/index.js"));
+
+var ListItemText_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js"));
+
+var Collapse_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Collapse */ "./node_modules/@material-ui/core/esm/Collapse/index.js"));
+
+var MoveToInbox_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/MoveToInbox */ "./node_modules/@material-ui/icons/MoveToInbox.js"));
+
+var Drafts_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Drafts */ "./node_modules/@material-ui/icons/Drafts.js"));
+
+var Send_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Send */ "./node_modules/@material-ui/icons/Send.js"));
+
+var ExpandLess_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ExpandLess */ "./node_modules/@material-ui/icons/ExpandLess.js"));
+
+var ExpandMore_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ExpandMore */ "./node_modules/@material-ui/icons/ExpandMore.js"));
+
+var StarBorder_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js"));
+
+var useStyles = styles_1.makeStyles(function (theme) {
+  return styles_1.createStyles({
+    root: {
+      width: '100%',
+      maxWidth: 360,
+      backgroundColor: theme.palette.background.paper
+    },
+    nested: {
+      paddingLeft: theme.spacing(4)
+    }
+  });
+});
+
+function MenuList() {
+  var classes = useStyles();
+
+  var _a = react_1["default"].useState(false),
+      open = _a[0],
+      setOpen = _a[1];
+
+  var handleClick = function handleClick() {
+    setOpen(!open);
+  };
+
+  return react_1["default"].createElement(List_1["default"], {
+    component: "nav",
+    "aria-labelledby": "nested-list-subheader",
+    subheader: react_1["default"].createElement(ListSubheader_1["default"], {
+      component: "div",
+      id: "nested-list-subheader"
+    }, "Nested List Items"),
+    className: classes.root
+  }, react_1["default"].createElement(ListItem_1["default"], {
+    button: true
+  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(Send_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
+    primary: "Sent mail"
+  })), react_1["default"].createElement(ListItem_1["default"], {
+    button: true
+  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(Drafts_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
+    primary: "Drafts"
+  })), react_1["default"].createElement(ListItem_1["default"], {
+    button: true,
+    onClick: handleClick
+  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(MoveToInbox_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
+    primary: "Inbox"
+  }), open ? react_1["default"].createElement(ExpandLess_1["default"], null) : react_1["default"].createElement(ExpandMore_1["default"], null)), react_1["default"].createElement(Collapse_1["default"], {
+    "in": open,
+    timeout: "auto",
+    unmountOnExit: true
+  }, react_1["default"].createElement(List_1["default"], {
+    component: "div",
+    disablePadding: true
+  }, react_1["default"].createElement(ListItem_1["default"], {
+    button: true,
+    className: classes.nested
+  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(StarBorder_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
+    primary: "Starred"
+  })))));
+}
+
+exports.default = MenuList;
+
+/***/ }),
+
+/***/ "./resources/ts/components/page/store/NavBar.tsx":
 /*!*******************************************************!*\
-  !*** ./resources/ts/components/page/store/Fadein.tsx ***!
+  !*** ./resources/ts/components/page/store/NavBar.tsx ***!
   \*******************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) {
+        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var MenuList_1 = __importDefault(__webpack_require__(/*! ./MenuList */ "./resources/ts/components/page/store/MenuList.tsx"));
+
+var ScrollAnimation_1 = __importDefault(__webpack_require__(/*! ./ScrollAnimation */ "./resources/ts/components/page/store/ScrollAnimation.tsx"));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var clsx_1 = __importDefault(__webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js"));
+
+var styles_1 = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+
+var Drawer_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Drawer */ "./node_modules/@material-ui/core/esm/Drawer/index.js"));
+
+var CssBaseline_1 = __importDefault(__webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/index.js"));
+
+var AppBar_1 = __importDefault(__webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js"));
+
+var Toolbar_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js"));
+
+var List_1 = __importDefault(__webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/esm/List/index.js"));
+
+var Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
+
+var Divider_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js"));
+
+var IconButton_1 = __importDefault(__webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js"));
+
+var Menu_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Menu */ "./node_modules/@material-ui/icons/Menu.js"));
+
+var ChevronLeft_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ChevronLeft */ "./node_modules/@material-ui/icons/ChevronLeft.js"));
+
+var ChevronRight_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ChevronRight */ "./node_modules/@material-ui/icons/ChevronRight.js"));
+
+var ListItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js"));
+
+var ListItemIcon_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/esm/ListItemIcon/index.js"));
+
+var ListItemText_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js"));
+
+var MoveToInbox_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/MoveToInbox */ "./node_modules/@material-ui/icons/MoveToInbox.js"));
+
+var Mail_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Mail */ "./node_modules/@material-ui/icons/Mail.js"));
+
+var drawerWidth = 240;
+var useStyles = styles_1.makeStyles(function (theme) {
+  return styles_1.createStyles({
+    root: {
+      display: 'flex'
+    },
+    appBar: {
+      transition: theme.transitions.create(['margin', 'width'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      })
+    },
+    appBarShift: {
+      width: "calc(100% - " + drawerWidth + "px)",
+      marginLeft: drawerWidth,
+      transition: theme.transitions.create(['margin', 'width'], {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen
+      })
+    },
+    menuButton: {
+      marginRight: theme.spacing(2)
+    },
+    hide: {
+      display: 'none'
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0
+    },
+    drawerPaper: {
+      width: drawerWidth
+    },
+    drawerHeader: __assign(__assign({
+      display: 'flex',
+      alignItems: 'center',
+      padding: theme.spacing(0, 1)
+    }, theme.mixins.toolbar), {
+      justifyContent: 'flex-end'
+    }),
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+      transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      }),
+      marginLeft: -drawerWidth
+    },
+    contentShift: {
+      transition: theme.transitions.create('margin', {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen
+      }),
+      marginLeft: 0
+    }
+  });
+});
+
+function PersistentDrawerLeft() {
+  var _a, _b;
+
+  var classes = useStyles();
+  var theme = styles_1.useTheme();
+
+  var _c = react_1["default"].useState(false),
+      open = _c[0],
+      setOpen = _c[1];
+
+  var handleDrawerOpen = function handleDrawerOpen() {
+    setOpen(true);
+  };
+
+  var handleDrawerClose = function handleDrawerClose() {
+    setOpen(false);
+  };
+
+  return react_1["default"].createElement("div", {
+    className: classes.root
+  }, react_1["default"].createElement(CssBaseline_1["default"], null), react_1["default"].createElement(AppBar_1["default"], {
+    position: "fixed",
+    className: clsx_1["default"](classes.appBar, (_a = {}, _a[classes.appBarShift] = open, _a))
+  }, react_1["default"].createElement(Toolbar_1["default"], null, react_1["default"].createElement(IconButton_1["default"], {
+    color: "inherit",
+    "aria-label": "open drawer",
+    onClick: handleDrawerOpen,
+    edge: "start",
+    className: clsx_1["default"](classes.menuButton, open && classes.hide)
+  }, react_1["default"].createElement(Menu_1["default"], null)), react_1["default"].createElement(Typography_1["default"], {
+    variant: "h6",
+    noWrap: true
+  }, "Persistent drawer"))), react_1["default"].createElement(Drawer_1["default"], {
+    className: classes.drawer,
+    variant: "persistent",
+    anchor: "left",
+    open: open,
+    classes: {
+      paper: classes.drawerPaper
+    }
+  }, react_1["default"].createElement("div", {
+    className: classes.drawerHeader
+  }, react_1["default"].createElement(IconButton_1["default"], {
+    onClick: handleDrawerClose
+  }, theme.direction === 'ltr' ? react_1["default"].createElement(ChevronLeft_1["default"], null) : react_1["default"].createElement(ChevronRight_1["default"], null))), react_1["default"].createElement(Divider_1["default"], null), react_1["default"].createElement(List_1["default"], null, react_1["default"].createElement(MenuList_1["default"], null)), react_1["default"].createElement(Divider_1["default"], null), react_1["default"].createElement(List_1["default"], null, ['All mail', 'Trash', 'Spam'].map(function (text, index) {
+    return react_1["default"].createElement(ListItem_1["default"], {
+      button: true,
+      key: text
+    }, react_1["default"].createElement(ListItemIcon_1["default"], null, index % 2 === 0 ? react_1["default"].createElement(MoveToInbox_1["default"], null) : react_1["default"].createElement(Mail_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
+      primary: text
+    }));
+  }))), react_1["default"].createElement("main", {
+    className: clsx_1["default"](classes.content, (_b = {}, _b[classes.contentShift] = open, _b))
+  }, react_1["default"].createElement("div", {
+    className: classes.drawerHeader
+  }), react_1["default"].createElement(Typography_1["default"], {
+    paragraph: true
+  }, react_1["default"].createElement(ScrollAnimation_1["default"], null))));
+}
+
+exports.default = PersistentDrawerLeft;
+
+/***/ }),
+
+/***/ "./resources/ts/components/page/store/ScrollAnimation.tsx":
+/*!****************************************************************!*\
+  !*** ./resources/ts/components/page/store/ScrollAnimation.tsx ***!
+  \****************************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -17397,348 +17739,6 @@ function App() {
 }
 
 exports.default = App;
-
-/***/ }),
-
-/***/ "./resources/ts/components/page/store/Home.tsx":
-/*!*****************************************************!*\
-  !*** ./resources/ts/components/page/store/Home.tsx ***!
-  \*****************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var NavBar_1 = __importDefault(__webpack_require__(/*! ./NavBar */ "./resources/ts/components/page/store/NavBar.tsx"));
-
-var Home = function Home() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(NavBar_1["default"], null));
-};
-
-exports.default = Home;
-
-/***/ }),
-
-/***/ "./resources/ts/components/page/store/MenuList.tsx":
-/*!*********************************************************!*\
-  !*** ./resources/ts/components/page/store/MenuList.tsx ***!
-  \*********************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var styles_1 = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-
-var ListSubheader_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListSubheader */ "./node_modules/@material-ui/core/esm/ListSubheader/index.js"));
-
-var List_1 = __importDefault(__webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/esm/List/index.js"));
-
-var ListItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js"));
-
-var ListItemIcon_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/esm/ListItemIcon/index.js"));
-
-var ListItemText_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js"));
-
-var Collapse_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Collapse */ "./node_modules/@material-ui/core/esm/Collapse/index.js"));
-
-var MoveToInbox_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/MoveToInbox */ "./node_modules/@material-ui/icons/MoveToInbox.js"));
-
-var Drafts_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Drafts */ "./node_modules/@material-ui/icons/Drafts.js"));
-
-var Send_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Send */ "./node_modules/@material-ui/icons/Send.js"));
-
-var ExpandLess_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ExpandLess */ "./node_modules/@material-ui/icons/ExpandLess.js"));
-
-var ExpandMore_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ExpandMore */ "./node_modules/@material-ui/icons/ExpandMore.js"));
-
-var StarBorder_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/StarBorder */ "./node_modules/@material-ui/icons/StarBorder.js"));
-
-var useStyles = styles_1.makeStyles(function (theme) {
-  return styles_1.createStyles({
-    root: {
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper
-    },
-    nested: {
-      paddingLeft: theme.spacing(4)
-    }
-  });
-});
-
-function MenuList() {
-  var classes = useStyles();
-
-  var _a = react_1["default"].useState(false),
-      open = _a[0],
-      setOpen = _a[1];
-
-  var handleClick = function handleClick() {
-    setOpen(!open);
-  };
-
-  return react_1["default"].createElement(List_1["default"], {
-    component: "nav",
-    "aria-labelledby": "nested-list-subheader",
-    subheader: react_1["default"].createElement(ListSubheader_1["default"], {
-      component: "div",
-      id: "nested-list-subheader"
-    }, "Nested List Items"),
-    className: classes.root
-  }, react_1["default"].createElement(ListItem_1["default"], {
-    button: true
-  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(Send_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
-    primary: "Sent mail"
-  })), react_1["default"].createElement(ListItem_1["default"], {
-    button: true
-  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(Drafts_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
-    primary: "Drafts"
-  })), react_1["default"].createElement(ListItem_1["default"], {
-    button: true,
-    onClick: handleClick
-  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(MoveToInbox_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
-    primary: "Inbox"
-  }), open ? react_1["default"].createElement(ExpandLess_1["default"], null) : react_1["default"].createElement(ExpandMore_1["default"], null)), react_1["default"].createElement(Collapse_1["default"], {
-    "in": open,
-    timeout: "auto",
-    unmountOnExit: true
-  }, react_1["default"].createElement(List_1["default"], {
-    component: "div",
-    disablePadding: true
-  }, react_1["default"].createElement(ListItem_1["default"], {
-    button: true,
-    className: classes.nested
-  }, react_1["default"].createElement(ListItemIcon_1["default"], null, react_1["default"].createElement(StarBorder_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
-    primary: "Starred"
-  })))));
-}
-
-exports.default = MenuList;
-
-/***/ }),
-
-/***/ "./resources/ts/components/page/store/NavBar.tsx":
-/*!*******************************************************!*\
-  !*** ./resources/ts/components/page/store/NavBar.tsx ***!
-  \*******************************************************/
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var __assign = this && this.__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-
-      for (var p in s) {
-        if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-      }
-    }
-
-    return t;
-  };
-
-  return __assign.apply(this, arguments);
-};
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-
-var MenuList_1 = __importDefault(__webpack_require__(/*! ./MenuList */ "./resources/ts/components/page/store/MenuList.tsx"));
-
-var Fadein_1 = __importDefault(__webpack_require__(/*! ./Fadein */ "./resources/ts/components/page/store/Fadein.tsx"));
-
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var clsx_1 = __importDefault(__webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js"));
-
-var styles_1 = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-
-var Drawer_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Drawer */ "./node_modules/@material-ui/core/esm/Drawer/index.js"));
-
-var CssBaseline_1 = __importDefault(__webpack_require__(/*! @material-ui/core/CssBaseline */ "./node_modules/@material-ui/core/esm/CssBaseline/index.js"));
-
-var AppBar_1 = __importDefault(__webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/esm/AppBar/index.js"));
-
-var Toolbar_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/esm/Toolbar/index.js"));
-
-var List_1 = __importDefault(__webpack_require__(/*! @material-ui/core/List */ "./node_modules/@material-ui/core/esm/List/index.js"));
-
-var Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
-
-var Divider_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js"));
-
-var IconButton_1 = __importDefault(__webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/esm/IconButton/index.js"));
-
-var Menu_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Menu */ "./node_modules/@material-ui/icons/Menu.js"));
-
-var ChevronLeft_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ChevronLeft */ "./node_modules/@material-ui/icons/ChevronLeft.js"));
-
-var ChevronRight_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/ChevronRight */ "./node_modules/@material-ui/icons/ChevronRight.js"));
-
-var ListItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js"));
-
-var ListItemIcon_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemIcon */ "./node_modules/@material-ui/core/esm/ListItemIcon/index.js"));
-
-var ListItemText_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItemText */ "./node_modules/@material-ui/core/esm/ListItemText/index.js"));
-
-var MoveToInbox_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/MoveToInbox */ "./node_modules/@material-ui/icons/MoveToInbox.js"));
-
-var Mail_1 = __importDefault(__webpack_require__(/*! @material-ui/icons/Mail */ "./node_modules/@material-ui/icons/Mail.js"));
-
-var drawerWidth = 240;
-var useStyles = styles_1.makeStyles(function (theme) {
-  return styles_1.createStyles({
-    root: {
-      display: 'flex'
-    },
-    appBar: {
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen
-      })
-    },
-    appBarShift: {
-      width: "calc(100% - " + drawerWidth + "px)",
-      marginLeft: drawerWidth,
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen
-      })
-    },
-    menuButton: {
-      marginRight: theme.spacing(2)
-    },
-    hide: {
-      display: 'none'
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0
-    },
-    drawerPaper: {
-      width: drawerWidth
-    },
-    drawerHeader: __assign(__assign({
-      display: 'flex',
-      alignItems: 'center',
-      padding: theme.spacing(0, 1)
-    }, theme.mixins.toolbar), {
-      justifyContent: 'flex-end'
-    }),
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen
-      }),
-      marginLeft: -drawerWidth
-    },
-    contentShift: {
-      transition: theme.transitions.create('margin', {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen
-      }),
-      marginLeft: 0
-    }
-  });
-});
-
-function PersistentDrawerLeft() {
-  var _a, _b;
-
-  var classes = useStyles();
-  var theme = styles_1.useTheme();
-
-  var _c = react_1["default"].useState(false),
-      open = _c[0],
-      setOpen = _c[1];
-
-  var handleDrawerOpen = function handleDrawerOpen() {
-    setOpen(true);
-  };
-
-  var handleDrawerClose = function handleDrawerClose() {
-    setOpen(false);
-  };
-
-  return react_1["default"].createElement("div", {
-    className: classes.root
-  }, react_1["default"].createElement(CssBaseline_1["default"], null), react_1["default"].createElement(AppBar_1["default"], {
-    position: "fixed",
-    className: clsx_1["default"](classes.appBar, (_a = {}, _a[classes.appBarShift] = open, _a))
-  }, react_1["default"].createElement(Toolbar_1["default"], null, react_1["default"].createElement(IconButton_1["default"], {
-    color: "inherit",
-    "aria-label": "open drawer",
-    onClick: handleDrawerOpen,
-    edge: "start",
-    className: clsx_1["default"](classes.menuButton, open && classes.hide)
-  }, react_1["default"].createElement(Menu_1["default"], null)), react_1["default"].createElement(Typography_1["default"], {
-    variant: "h6",
-    noWrap: true
-  }, "Persistent drawer"))), react_1["default"].createElement(Drawer_1["default"], {
-    className: classes.drawer,
-    variant: "persistent",
-    anchor: "left",
-    open: open,
-    classes: {
-      paper: classes.drawerPaper
-    }
-  }, react_1["default"].createElement("div", {
-    className: classes.drawerHeader
-  }, react_1["default"].createElement(IconButton_1["default"], {
-    onClick: handleDrawerClose
-  }, theme.direction === 'ltr' ? react_1["default"].createElement(ChevronLeft_1["default"], null) : react_1["default"].createElement(ChevronRight_1["default"], null))), react_1["default"].createElement(Divider_1["default"], null), react_1["default"].createElement(List_1["default"], null, react_1["default"].createElement(MenuList_1["default"], null)), react_1["default"].createElement(Divider_1["default"], null), react_1["default"].createElement(List_1["default"], null, ['All mail', 'Trash', 'Spam'].map(function (text, index) {
-    return react_1["default"].createElement(ListItem_1["default"], {
-      button: true,
-      key: text
-    }, react_1["default"].createElement(ListItemIcon_1["default"], null, index % 2 === 0 ? react_1["default"].createElement(MoveToInbox_1["default"], null) : react_1["default"].createElement(Mail_1["default"], null)), react_1["default"].createElement(ListItemText_1["default"], {
-      primary: text
-    }));
-  }))), react_1["default"].createElement("main", {
-    className: clsx_1["default"](classes.content, (_b = {}, _b[classes.contentShift] = open, _b))
-  }, react_1["default"].createElement("div", {
-    className: classes.drawerHeader
-  }), react_1["default"].createElement(Typography_1["default"], {
-    paragraph: true
-  }, react_1["default"].createElement(Fadein_1["default"], null))));
-}
-
-exports.default = PersistentDrawerLeft;
 
 /***/ }),
 

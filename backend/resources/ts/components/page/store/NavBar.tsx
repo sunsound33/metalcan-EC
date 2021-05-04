@@ -1,5 +1,5 @@
-import MenuList from './MenuList';
-import Fadein from './Fadein';
+import MenuList from './MenuList'
+import ScrollAnimation from './ScrollAnimation';
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
@@ -153,7 +153,7 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader} />
         <Typography paragraph>
-          <Fadein />
+          <ScrollAnimation />
         </Typography>
       </main>
     </div>

@@ -4,12 +4,7 @@ import Home from './page/store/Home';
 
 function App() {
   return (
-    <>
-      <Home/>
-
-    </>
-        
-        
+    <><Home /></>
   );
 };
 

@@ -14,9 +14,9 @@ services:
       - DB_CONNECTION=mysql
       - DB_HOST=db
       - DB_PORT=3306
-      - DB_DATABASE=${DB_NAME:-laravel_local}
-      - DB_USERNAME=${DB_USER:-phper}
-      - DB_PASSWORD=${DB_PASS:-secret}
+      - DB_DATABASE=${DB_NAME:-metalcan}
+      - DB_USERNAME=${DB_USER:-admin}
+      - DB_PASSWORD=${DB_PASS:-cocoa}
 
   web:
     build:
@@ -33,11 +33,11 @@ services:
       context: .
       dockerfile: ./infra/docker/mysql/Dockerfile
     ports:
-      - ${DB_PORT:-3306}:3306
+      - ${DB_PORT:-3308}:3306
     volumes:
       - db-store:/var/lib/mysql
     environment:
-      - MYSQL_DATABASE=${DB_NAME:-laravel_local}
-      - MYSQL_USER=${DB_USER:-phper}
-      - MYSQL_PASSWORD=${DB_PASS:-secret}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
+      - MYSQL_DATABASE=${DB_NAME:-metalcan}
+      - MYSQL_USER=${DB_USER:-admin}
+      - MYSQL_PASSWORD=${DB_PASS:-cocoa}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS:-cocoa}
